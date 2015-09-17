@@ -1,3 +1,6 @@
+set nocompatible
+filetype off
+
 set number
 set hlsearch
 syntax enable
@@ -13,8 +16,10 @@ set encoding=utf-8
 set fileencoding=utf-8
 set gdefault
 
+" Pathogen Start
 execute pathogen#infect()
 
+" Plugged Start
 call plug#begin('~/.vim/plugged')
 
 Plug 'whatyouhide/vim-gotham'
@@ -25,9 +30,35 @@ Plug 'bling/vim-airline'
 
 call plug#end()
 
+" Vundle Start
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+
+call vundle#end()
+
+set guifont=Monaco:h13
+
 set bg=dark
 colorscheme solarized
+
+let mapleader=','
 
 " NERDTree mapping
 autocmd vimenter * NERDTree
 map <C-z> :NERDTreeToggle<CR>
+
+autocmd Filetype html nnoremap <leader>c I<!--<esc>A--><esc>
+
+augroup JavaScriptCmds
+  autocmd!
+  autocmd Filetype javascript nnoremap <leader>r :!node %<cr>
+  autocmd Filetype javascript nnoremap <leader>c I//<esc>
+augroup END
+
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
