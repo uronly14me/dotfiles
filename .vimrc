@@ -16,6 +16,10 @@ set encoding=utf-8
 set fileencoding=utf-8
 set gdefault
 
+set scrolloff=5
+set wildmenu
+set wildmode=full
+
 " Pathogen Start
 execute pathogen#infect()
 
@@ -36,6 +40,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
