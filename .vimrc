@@ -67,3 +67,6 @@ noremap <left> <nop>
 noremap <right> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
+
+inoremap jj <Esc>
+
